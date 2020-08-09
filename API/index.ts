@@ -1,6 +1,8 @@
 import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
+import createQuiz from "./src/routes/createQuiz";
+import getQuiz from "./src/routes/getQuiz";
 
 const app = express();
 
@@ -11,3 +13,6 @@ app.use(bodyParser.json());
 const server = app.listen(8081, function () {
   console.log("App running");
 });
+
+app.post("/createQuiz", createQuiz);
+app.get("/getQuiz/:id", getQuiz);
