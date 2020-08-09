@@ -3,6 +3,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import createQuiz from "./src/routes/createQuiz";
 import getQuiz from "./src/routes/getQuiz";
+import listQuizs from "./src/routes/listQuizs";
 
 const app = express();
 
@@ -16,3 +17,4 @@ const server = app.listen(8081, function () {
 
 app.post("/createQuiz", createQuiz);
 app.get("/getQuiz/:id", getQuiz);
+app.get("/listQuizs", listQuizs);
