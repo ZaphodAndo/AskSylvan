@@ -28,5 +28,15 @@
       { "question": "q3", "answer": "he is a green frog 3", "id": 2, "isHidden": true }
     ],
     "id": "e74651ac-85ca-47da-947f-ccefac59d403"
+  },
+  {
+    "name": "Ethan's Big Fat Quiz",
+    "desc": "Its a Quiz, Its big and its fat",
+    "quizBody": [
+      { "question": "q1", "answer": "a1", "id": 0, "isHidden": true },
+      { "question": "q2", "answer": "a2", "id": 1, "isHidden": true },
+      { "question": "q3", "answer": "a3", "id": 2, "isHidden": true }
+    ],
+    "id": "ace271b9-8a84-4d89-a6b8-e3287e5f3c7f"
   }
 ]
