@@ -1,10 +1,10 @@
-import QuizMeme from "./QuizMeme";
+import QuizContent from "./QuizContent";
 
 type Quiz = {
   id: string;
   name: string;
   desc: string;
-  quizBody: Array<QuizMeme>;
+  quizBody: Array<QuizContent>;
 };
 
 export default Quiz;

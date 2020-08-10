@@ -1,19 +1,19 @@
 import fs from "fs";
 import { v4 } from "uuid";
 import { Response, Request } from "express";
-import QuizMeme from "../models/QuizMeme";
+import QuizContent from "../models/QuizContent";
 
 const dir = __dirname.replace("/dist/src/routes", "");
 
 const createQuiz = (req: Request, res: Response) => {
   fs.readFile(dir + "/" + "quiz.json", "utf8", (err, data) => {
     let quizs = JSON.parse(data);
-    const quizBody: Array<QuizMeme> = [];
+    const quizBody: Array<QuizContent> = [];
 
-    req.body.quizBody.map((quizMeme: QuizMeme, i: number) => {
-      quizMeme.id = i;
-      quizMeme.isHidden = true;
-      quizBody.push(quizMeme);
+    req.body.quizBody.map((quizContent: QuizContent, i: number) => {
+      quizContent.id = i;
+      quizContent.isHidden = true;
+      quizBody.push(quizContent);
     });
 
     req.body.quizBody = quizBody;
