@@ -2,7 +2,7 @@ import React from "react";
 import { RouteComponentProps } from "react-router";
 import QuizBlock from "../QuizBlock/QuizBlock";
 import Quiz from "../../models/Quiz";
-import QuizMeme from "../../models/QuizMeme";
+import QuizContent from "../../models/QuizContent";
 import "./QuizView.scss";
 
 interface QuizProps extends RouteComponentProps<{ id: string }, {}, {}> {}
@@ -35,9 +35,9 @@ class QuizView extends React.Component<QuizProps, QuizState> {
     id = id + 1;
     let quiz = this.state.quiz;
 
-    quiz.quizBody.map((quizMeme: QuizMeme, i) => {
-      if (quizMeme.id === id) {
-        quizMeme.isHidden = false;
+    quiz.quizBody.map((quizContent: QuizContent, i) => {
+      if (quizContent.id === id) {
+        quizContent.isHidden = false;
         return quiz;
       } else {
         return quiz;
@@ -50,14 +50,14 @@ class QuizView extends React.Component<QuizProps, QuizState> {
   public render() {
     return (
       <div className="quiz-content">
-        {this.state.quiz.quizBody.map((quiz: QuizMeme, i) => {
+        {this.state.quiz.quizBody.map((quizContent: QuizContent, i) => {
           if (i === 0) {
             return (
               <QuizBlock
                 key={i}
-                question={quiz.question}
-                answer={quiz.answer}
-                id={quiz.id}
+                question={quizContent.question}
+                answer={quizContent.answer}
+                id={quizContent.id}
                 isHidden={false}
                 onClick={this.showNextQuestion}
               ></QuizBlock>
@@ -66,10 +66,10 @@ class QuizView extends React.Component<QuizProps, QuizState> {
             return (
               <QuizBlock
                 key={i}
-                question={quiz.question}
-                answer={quiz.answer}
-                id={quiz.id}
-                isHidden={quiz.isHidden}
+                question={quizContent.question}
+                answer={quizContent.answer}
+                id={quizContent.id}
+                isHidden={quizContent.isHidden}
                 onClick={this.showNextQuestion}
               ></QuizBlock>
             );

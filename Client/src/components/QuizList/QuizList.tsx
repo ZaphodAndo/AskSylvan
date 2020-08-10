@@ -1,14 +1,7 @@
 import React from "react";
 import QuizCard from "../QuizCard/QuizCard";
-import QuizMeme from "../../models/QuizMeme";
+import Quiz from "../../models/Quiz";
 import "./QuizList.scss";
-
-type QuizType = {
-  id: string;
-  name: string;
-  desc: string;
-  quizBody: Array<QuizMeme>;
-};
 
 class QuizList extends React.Component {
   public state = {
@@ -39,7 +32,7 @@ class QuizList extends React.Component {
           </span>
         </h1>
         <div className="list">
-          {this.state.quizs.map((quiz: QuizType, i) => {
+          {this.state.quizs.map((quiz: Quiz, i) => {
             return <QuizCard key={i} name={quiz.name} desc={quiz.desc} id={quiz.id}></QuizCard>;
           })}
         </div>

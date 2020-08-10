@@ -1,8 +1,8 @@
-type QuizMeme = {
+type QuizContent = {
   question: string;
   answer: string;
   id: number;
   isHidden: boolean;
 };
 
-export default QuizMeme;
+export default QuizContent;
