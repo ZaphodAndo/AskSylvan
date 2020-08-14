@@ -11,8 +11,11 @@ type QuizCardProps = {
 function QuizCard(props: QuizCardProps) {
   return (
     <Link className="quiz" to={"/quiz/" + props.id}>
-      <p>{props.name}</p>
-      <p>{props.desc}</p>
+      <div className="quiz-content">
+        <p className="name">{props.name}</p>
+        <p className="desc">{props.desc}</p>
+      </div>
+      <hr />
     </Link>
   );
 }

@@ -1,0 +1,45 @@
+.quiz-list {
+  .title-section {
+    text-align: center;
+    margin-bottom: 6rem;
+
+    h1 {
+      font-size: 3rem;
+      margin: 0;
+
+      .ask-text {
+        color: var(--accent-colour);
+      }
+    }
+
+    .tag-line {
+      font-weight: bold;
+      margin: 0;
+    }
+
+    @media screen and (max-width: 800px) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  .create-quiz-link {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: end;
+    text-decoration: none;
+    color: var(--accent-colour);
+
+    .add-icon {
+      width: 1rem;
+      margin-right: 0.5rem;
+    }
+
+    &:hover {
+      color: var(--text-colour);
+    }
+  }
+
+  .list {
+    margin-top: 1rem;
+  }
+}

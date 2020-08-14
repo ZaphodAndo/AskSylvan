@@ -1,0 +1,23 @@
+.quiz {
+  text-decoration: none;
+  min-width: 20rem;
+
+  .quiz-content {
+    .name {
+      color: var(--accent-colour);
+      font-weight: bold;
+      font-size: 1.9rem;
+      margin: 1rem 0 1rem 0;
+    }
+
+    .desc {
+      color: var(--text-colour);
+      font-size: 1rem;
+      margin: 0 0 1rem 0;
+    }
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
