@@ -1,4 +1,7 @@
 .quiz-list {
+  max-width: 600px;
+  margin: 6rem auto 6rem auto;
+
   .title-section {
     text-align: center;
     margin-bottom: 6rem;
@@ -41,5 +44,9 @@
 
   .list {
     margin-top: 1rem;
+  }
+
+  @media screen and (max-width: 800px) {
+    margin: 3rem auto 3rem auto;
   }
 }

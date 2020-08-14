@@ -1,4 +1,6 @@
 import React from "react";
+import DownArrowIcon from "../Icons/DownArrowIcon";
+import EyeIcon from "../Icons/EyeIcon";
 import "./QuizBlock.scss";
 
 type QuizBlockProps = {
@@ -28,18 +30,26 @@ class QuizBlock extends React.Component<QuizBlockProps> {
     } else {
       return (
         <div className="quiz-block">
-          <p>{this.props.question}</p>
+          <p className="question">{this.props.question}</p>
           <div className="middle-section">
-            <input></input>
-            <p>
+            <textarea className="quiz-box"></textarea>
+            <div className="quiz-box answer-box">
               {this.state.answerIsShown ? (
                 this.props.answer
               ) : (
-                <button onClick={this.revealAnswer}>Reveal Answer</button>
+                <div className="reveal-answer" onClick={this.revealAnswer}>
+                  <EyeIcon className="eye-icon"></EyeIcon>
+                  <p>Reveal Answer</p>
+                </div>
               )}
-            </p>
+            </div>
           </div>
-          <button onClick={this.onButtonClick}>Next Question</button>
+          <div className="next-question">
+            <button className="next-question-btn" onClick={this.onButtonClick}>
+              Next
+            </button>
+            <DownArrowIcon className="down-arrow-icon"></DownArrowIcon>
+          </div>
         </div>
       );
     }

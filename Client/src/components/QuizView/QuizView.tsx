@@ -49,7 +49,7 @@ class QuizView extends React.Component<QuizProps, QuizState> {
 
   public render() {
     return (
-      <div className="quiz-content">
+      <div className="quiz-view">
         {this.state.quiz.quizBody.map((quizContent: QuizContent, i) => {
           if (i === 0) {
             return (
