@@ -1,7 +1,11 @@
 import React from "react";
+import Scroll from "react-scroll";
 import DownArrowIcon from "../Icons/DownArrowIcon";
 import EyeIcon from "../Icons/EyeIcon";
 import "./QuizBlock.scss";
+
+const Element  = Scroll.Element;
+const scroller = Scroll.scroller;
 
 type QuizBlockProps = {
   question: string;
@@ -22,6 +26,13 @@ class QuizBlock extends React.Component<QuizBlockProps> {
 
   public onButtonClick = () => {
     this.props.onClick(this.props.id);
+
+    scroller.scrollTo('scroll-element', {
+      duration: 500,
+      delay: 100,
+      smooth: true,
+      offset: 200
+    });
   };
 
   public render() {
@@ -50,6 +61,7 @@ class QuizBlock extends React.Component<QuizBlockProps> {
             </button>
             <DownArrowIcon className="down-arrow-icon"></DownArrowIcon>
           </div>
+          <Element name="scroll-element"></Element>
         </div>
       );
     }
