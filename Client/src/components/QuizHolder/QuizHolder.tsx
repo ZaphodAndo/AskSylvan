@@ -10,13 +10,15 @@ type QuizHolderState = {
   quiz: Quiz;
   error: null;
   finished: boolean;
+  response: string;
 };
 
 class QuizHolder extends React.Component<QuizHolderProps, QuizHolderState> {
   public state = {
     quiz: { id: "", name: "", desc: "", quizBody: [] },
     error: null,
-    finished: false
+    finished: false,
+    response: ""
   };
 
   public componentDidMount() {
@@ -32,12 +34,22 @@ class QuizHolder extends React.Component<QuizHolderProps, QuizHolderState> {
       );
   }
 
+  public setResponse = (e: React.SyntheticEvent<HTMLTextAreaElement>) => {
+    this.setState({ response: e.currentTarget.value });
+  };
+
   public changeQuestion = (id: number, next: boolean) => {
     let quiz = this.state.quiz;
 
     quiz.quizBody.map((quizContent: QuizContent) => {
       if (quizContent.id === id) {
         quizContent.isHidden = true;
+
+        if (this.state.response !== "") {
+          quizContent.response = this.state.response;
+          this.setState({ response: "" });
+        }
+
         return quiz;
       } else {
         return quiz;
@@ -65,7 +77,7 @@ class QuizHolder extends React.Component<QuizHolderProps, QuizHolderState> {
 
   public render() {
     if (this.state.finished) {
-      return <QuizResults />;
+      return <QuizResults quiz={this.state.quiz} />;
     } else {
       return (
         <>
@@ -74,7 +86,7 @@ class QuizHolder extends React.Component<QuizHolderProps, QuizHolderState> {
               return (
                 <div className="quiz-holder" key={i}>
                   <h1>{quizContent.question}</h1>
-                  <textarea></textarea>
+                  <textarea defaultValue={quizContent.response} onInput={this.setResponse} />
                   <div className="controls">
                     {quizContent.id === 0 ? null : (
                       <button onClick={() => this.changeQuestion(quizContent.id, false)}>Back</button>
