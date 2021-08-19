@@ -2,7 +2,11 @@ import React from "react";
 import { RouteComponentProps } from "react-router";
 import Quiz from "../../models/Quiz";
 import QuizContent from "../../models/QuizContent";
+import ArrowLeftIcon from "../Icons/ArrowLeftIcon";
+import ArrowRightIcon from "../Icons/ArrowRightIcon";
+import ProgressBar from "../ProgressBar/ProgressBar";
 import QuizResults from "../QuizResults/QuizResults";
+import "./QuizHolder.scss";
 
 interface QuizHolderProps extends RouteComponentProps<{ id: string }, {}, {}> {}
 
@@ -85,14 +89,23 @@ class QuizHolder extends React.Component<QuizHolderProps, QuizHolderState> {
             if (!quizContent.isHidden) {
               return (
                 <div className="quiz-holder" key={i}>
-                  <h1>{quizContent.question}</h1>
-                  <textarea defaultValue={quizContent.response} onInput={this.setResponse} />
-                  <div className="controls">
-                    {quizContent.id === 0 ? null : (
-                      <button onClick={() => this.changeQuestion(quizContent.id, false)}>Back</button>
-                    )}
-                    <button onClick={() => this.changeQuestion(quizContent.id, true)}>forward</button>
+                  <div className="content">
+                    <h1>{quizContent.question}</h1>
+                    <textarea defaultValue={quizContent.response} onInput={this.setResponse} />
+                    <div className="controls">
+                      {quizContent.id === 0 ? null : (
+                        <button className="back-btn" onClick={() => this.changeQuestion(quizContent.id, false)}>
+                          <ArrowLeftIcon className="arrow-icon" />
+                          Back
+                        </button>
+                      )}
+                      <button className="next-btn" onClick={() => this.changeQuestion(quizContent.id, true)}>
+                        Next
+                        <ArrowRightIcon className="arrow-icon" />
+                      </button>
+                    </div>
                   </div>
+                  <ProgressBar quiz={this.state.quiz} currentQuestion={quizContent.id} />
                 </div>
               );
             }
