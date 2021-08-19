@@ -3,8 +3,18 @@
     "name": "Aj's Quiz on memes",
     "desc": "This is a quiz on memes pepelaugh",
     "quizBody": [
-      { "question": "what is memes", "answer": "he is a green frog", "id": 0, "isHidden": false },
-      { "question": "what is pepe 2", "answer": "he is a green frog 2", "id": 1, "isHidden": true },
+      {
+        "question": "Describe the popular meme character Pepe the frog.",
+        "answer": "he is a green frog",
+        "id": 0,
+        "isHidden": false
+      },
+      {
+        "question": "Describe the popular Twitch emote PogChamp",
+        "answer": "he is a green frog 2",
+        "id": 1,
+        "isHidden": true
+      },
       { "question": "what is pepe 3", "answer": "he is a green frog 3", "id": 2, "isHidden": true }
     ],
     "id": "71ebbb2a-97ba-4c5f-8855-1e18984d8828"
