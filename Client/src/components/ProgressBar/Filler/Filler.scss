@@ -1,5 +1,5 @@
 .filler {
-  background: linear-gradient(90deg, #fada38 0%, #33ff77 49.48%, #33bbff 100%);
+  background: var(--gradient);
   height: 100%;
   border-radius: inherit;
   transition: width 0.2s ease-in;
