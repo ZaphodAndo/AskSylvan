@@ -52,7 +52,7 @@ class QuizResults extends React.Component<QuizResultsProps> {
               <h3>Answer</h3>
               <p>{quizContent.answer}</p>
               <h3>Your Response</h3>
-              <p>{quizContent.response}</p>
+              <p>{quizContent.response ? quizContent.response : "(╯°□°）╯︵ ┻━┻"}</p>
             </div>
           );
         })}
