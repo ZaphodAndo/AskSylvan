@@ -18,14 +18,14 @@ function AddIcon(props: AddIconProps) {
     >
       <path
         fill="none"
-        stroke="#e291ac"
+        stroke="#33bbff"
         strokeWidth="1.6"
         d="M612.365 684.615h11.188"
         transform="matrix(3.9289 0 0 2.93333 -2401.969 -1983.202)"
       ></path>
       <path
         fill="none"
-        stroke="#e291ac"
+        stroke="#33bbff"
         strokeWidth="1.59"
         d="M612.365 684.615h11.188"
         transform="matrix(0 -3.93274 2.93047 0 -1980.31 2455.264)"

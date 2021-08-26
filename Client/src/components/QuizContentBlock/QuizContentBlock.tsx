@@ -1,4 +1,5 @@
 import React from "react";
+import "./QuizContentBlock.scss";
 
 type QuizContent = {
   question: string;
@@ -16,14 +17,14 @@ class QuizContentBlock extends React.Component<QuizContentBlockProps> {
     answer: ""
   };
 
-  public onQuestionInput = (event: React.SyntheticEvent<HTMLInputElement>) => {
+  public onQuestionInput = (event: React.SyntheticEvent<HTMLTextAreaElement>) => {
     const newValue = event.currentTarget.value;
     const newQuizContent = { question: newValue, answer: this.state.answer };
     this.props.onUpdate(this.props.index, newQuizContent);
     this.setState({ question: newValue });
   };
 
-  public onAnswerInput = (event: React.SyntheticEvent<HTMLInputElement>) => {
+  public onAnswerInput = (event: React.SyntheticEvent<HTMLTextAreaElement>) => {
     const newValue = event.currentTarget.value;
     const newQuizContent = { question: this.state.question, answer: newValue };
     this.props.onUpdate(this.props.index, newQuizContent);
@@ -32,9 +33,9 @@ class QuizContentBlock extends React.Component<QuizContentBlockProps> {
 
   render() {
     return (
-      <div>
-        <input placeholder="Question" value={this.state.question} onChange={this.onQuestionInput}></input>
-        <input placeholder="Answer" value={this.state.answer} onChange={this.onAnswerInput}></input>
+      <div className="quiz-content-block">
+        <textarea placeholder="Question" value={this.state.question} onChange={this.onQuestionInput}></textarea>
+        <textarea placeholder="Answer" value={this.state.answer} onChange={this.onAnswerInput}></textarea>
       </div>
     );
   }

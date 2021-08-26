@@ -3,9 +3,24 @@
     "name": "Aj's Quiz on memes",
     "desc": "This is a quiz on memes pepelaugh",
     "quizBody": [
-      { "question": "what is memes", "answer": "he is a green frog", "id": 0, "isHidden": true },
-      { "question": "what is pepe 2", "answer": "he is a green frog 2", "id": 1, "isHidden": true },
-      { "question": "what is pepe 3", "answer": "he is a green frog 3", "id": 2, "isHidden": true }
+      {
+        "question": "Describe the popular meme character Pepe the frog.",
+        "answer": "he is a green frog",
+        "id": 0,
+        "isHidden": false
+      },
+      {
+        "question": "Describe the popular Twitch emote PogChamp",
+        "answer": "he is a green frog 2",
+        "id": 1,
+        "isHidden": true
+      },
+      {
+        "question": "Describe the popular Twitch emote Kappa",
+        "answer": "he is a green frog 3",
+        "id": 2,
+        "isHidden": true
+      }
     ],
     "id": "71ebbb2a-97ba-4c5f-8855-1e18984d8828"
   },
@@ -13,7 +28,7 @@
     "name": "Aj's Quiz on memes 2",
     "desc": "This is a quiz on memes pepelaugh 2",
     "quizBody": [
-      { "question": "what is pepe", "answer": "he is a green frog", "id": 0, "isHidden": true },
+      { "question": "what is pepe", "answer": "he is a green frog", "id": 0, "isHidden": false },
       { "question": "what is pepe 2", "answer": "he is a green frog 2", "id": 1, "isHidden": true },
       { "question": "what is pepe 3", "answer": "he is a green frog 3", "id": 2, "isHidden": true }
     ],
@@ -23,7 +38,7 @@
     "name": "Frontend stuff",
     "desc": "This is a quiz on Frontend",
     "quizBody": [
-      { "question": "q1", "answer": "he is a green frog", "id": 0, "isHidden": true },
+      { "question": "q1", "answer": "he is a green frog", "id": 0, "isHidden": false },
       { "question": "q2", "answer": "he is a green frog 2", "id": 1, "isHidden": true },
       { "question": "q3", "answer": "he is a green frog 3", "id": 2, "isHidden": true }
     ],
@@ -33,7 +48,7 @@
     "name": "Ethan's Big Fat Quiz",
     "desc": "Its a Quiz, Its big and its fat",
     "quizBody": [
-      { "question": "q1", "answer": "a1", "id": 0, "isHidden": true },
+      { "question": "q1", "answer": "a1", "id": 0, "isHidden": false },
       { "question": "q2", "answer": "a2", "id": 1, "isHidden": true },
       { "question": "q3", "answer": "a3", "id": 2, "isHidden": true }
     ],
