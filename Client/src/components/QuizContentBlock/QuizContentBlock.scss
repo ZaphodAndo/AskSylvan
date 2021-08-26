@@ -1,0 +1,30 @@
+.quiz-content-block {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 40px;
+
+  textarea {
+    background-color: var(--lighter-background);
+    border: 1px solid var(--lighter-background);
+    border-radius: 25px;
+    font: var(--font);
+    color: var(--text-colour);
+    padding: 14px 20px 14px 20px;
+    font-size: 20px;
+    line-height: 32px;
+    resize: none;
+    min-height: 180px;
+
+    &::placeholder {
+      color: var(--text-colour);
+    }
+
+    &:focus,
+    &:active {
+      outline: none;
+      border: 1px solid var(--accent-colour);
+      border-radius: 25px;
+    }
+  }
+}

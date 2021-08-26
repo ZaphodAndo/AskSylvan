@@ -1,6 +1,7 @@
 import React from "react";
 import QuizContentBlock from "../QuizContentBlock/QuizContentBlock";
 import { RouteChildrenProps } from "react-router-dom";
+import "./QuizBuilder.scss";
 
 type QuizContent = {
   question: string;
@@ -67,16 +68,22 @@ class QuizBuilder extends React.Component<QuizBuilderProps> {
 
   public render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input placeholder="Name" value={this.state.name} onChange={this.onNameInput}></input>
-        <input placeholder="Description" value={this.state.desc} onChange={this.onDescriptionInput}></input>
+      <form className="quiz-builder" onSubmit={this.handleSubmit}>
+        <div className="meta">
+          <input placeholder="Name" value={this.state.name} onChange={this.onNameInput}></input>
+          <input placeholder="Description" value={this.state.desc} onChange={this.onDescriptionInput}></input>
+        </div>
         {this.state.quizBody.map((quizContent, i) => (
           <QuizContentBlock key={i} index={i} onUpdate={this.updateQuizContent}></QuizContentBlock>
         ))}
-        <button type="button" onClick={this.addQuizContent}>
-          Add QuizContent
-        </button>
-        <button type="submit">Submit</button>
+        <div className="buttons">
+          <button type="button" onClick={this.addQuizContent}>
+            Add
+          </button>
+          <button className="save-btn" type="submit">
+            Save
+          </button>
+        </div>
       </form>
     );
   }
